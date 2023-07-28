@@ -1,0 +1,61 @@
+
+<style>
+  
+
+    table, td, th {
+    border: 1px solid;
+    
+  }
+  tr:hover {background-color: rgb(244, 247, 78);}
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  
+  }
+
+  .d{
+    width: 80px;
+    border-radius: 10px;
+    background-color:rgb(114, 114, 236);
+    color:white;
+    font-size: 17px;
+  }
+  .close-button {
+        cursor: pointer;
+        float: right;
+        font-weight: bold;
+    }
+</style>  
+<h1 class="text-center">List of Policy</h1>
+<div *ngIf="errormsg!=null">
+  <div *ngIf="errormsg!=''" class="alert alert-danger" style="text-align:center">{{errormsg}}
+    <span class="close-button" (click)="closeError()">X</span></div>
+  </div>
+<table class="table">
+    <tr>
+        <th>Policy ID</th>
+        <th>Policy Name</th>
+        <th>Catogory</th>
+        <th>Sum Assurance</th>
+        <th>Premium</th>
+        <th>Tenure</th>
+        <th>Created On</th>
+        
+      </tr>
+    <tr *ngFor="let i of policy">
+      
+           
+        <td>{{i.policyId}}</td>
+        <td>{{i.policyName}}</td>
+        <td>{{i.category}}</td>
+        <td>{{i.sumAssurance}}</td>
+        <td>{{i.premium}}</td>
+        <td>{{i.tenure}}</td>
+        <td>{{i.createdOn|date}}</td>
+        <td ><button [routerLink]="['/edit',i.policyId]" class="d" >Edit</button> | <input type="button" (click)="Delete(i.policyId)" value="Delete"class="d">
+          
+        
+  
+    </tr>
+</table>
+

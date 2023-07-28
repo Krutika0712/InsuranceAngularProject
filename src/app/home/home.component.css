@@ -1,0 +1,46 @@
+.home-container {
+  max-width: 800px;
+ 
+ margin: 0 auto;
+
+ padding: 20px;
+  text-align: center;
+    
+
+min-height: 100vh;
+
+
+min-width: 180vh;
+ 
+
+min-height: 100vh;
+
+min-width: 170vh;
+
+  }
+
+
+  h1 {
+
+    color: #007BFF
+  }
+
+  p {
+ font-size: 18px;
+  }
+
+  .container {
+    background-image: url('https://images.moneycontrol.com/static-mcnews/2021/03/Insurance_shutterstock_360072659.jpg?impolicy=website&width=770&height=431');
+    background-repeat: no-repeat;
+    height: 80vh;
+    width: 180vh;
+    background-size: cover;
+   
+    display: block; 
+    margin: 20px auto; 
+    border-radius: 5px; 
+   
+  }
+  .h1{
+    color: white;
+  }

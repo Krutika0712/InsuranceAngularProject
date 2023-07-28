@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .container .form-group {
+            margin-bottom: 20px;
+        }
+
+        .container .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .container .form-group input {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+        }
+
+        .container .t {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container .form-group .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container .form-group button {
+            width: 48%;
+            background-color: #4954eb;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .container .form-msg {
+            text-align: center;
+            margin-top: 10px;
+            color: #4954eb;
+        }
+        .close-button {
+        cursor: pointer;
+        float: right;
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <div *ngIf="errormsg!=null">
+        <div *ngIf="errormsg!=''" class="alert alert-danger" style="text-align:center">{{errormsg}}
+            <span class="close-button" (click)="closeError()">X</span></div>
+        </div>
+    <div class="container">
+        <h1>Edit Details</h1>
+        <div class="t">
+            <div class="form-group">
+                <label for="policyId"><b>Policy ID:</b></label>
+                <input type="number" id="policyId" [(ngModel)]="p.policyId" readonly />
+            </div>
+
+            <div class="form-group">
+                <label for="policyName"><b>Policy Name:</b></label>
+                <input type="text" id="policyName" [(ngModel)]="p.policyName" />
+            </div>
+
+            <div class="form-group">
+                <label for="category"><b>Category:</b></label>
+                <input type="text" id="category" [(ngModel)]="p.category" />
+            </div>
+
+            <div class="form-group">
+                <label for="sumAssurance"><b>Sum Assurance:</b></label>
+                <input type="number" id="sumAssurance" [(ngModel)]="p.sumAssurance" />
+            </div>
+
+            <div class="form-group">
+                <label for="premium"><b>Premium:</b></label>
+                <input type="number" id="premium" [(ngModel)]="p.premium" />
+            </div>
+
+            <div class="form-group">
+                <label for="tenure"><b>Tenure:</b></label>
+                <input type="number" id="tenure" [(ngModel)]="p.tenure" />
+            </div>
+
+            <div class="form-group">
+                <label for="createdOn"><b>Date:</b></label>
+                <input type="date" id="createdOn" [(ngModel)]="p.createdOn" />
+            </div>
+
+            <div class="form-group button-container">
+                <button type="submit" (click)="Save()">Save</button>|
+                <button type="button" class="cancel-btn" (click)="Cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <br />
+    {{ p | json }}
+</body>
+
+</html>

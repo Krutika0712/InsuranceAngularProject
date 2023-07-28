@@ -1,0 +1,97 @@
+<style>
+   body {
+        font-family: Arial, sans-serif;
+      
+    }
+
+    .container-fluid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+        
+    }
+
+    .login-content {
+        border: 1px solid #ccc;
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #62d0e6;
+    }
+
+    .login-content label,
+    .login-content input {
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .login-content input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .login-content button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .login-content button:hover {
+        background-color: #0056b3;
+    }
+    .close-button {
+        cursor: pointer;
+        float: right;
+        font-weight: bold;
+    }
+   
+    
+</style>
+
+
+<div *ngIf="errormsg!=null">
+<div *ngIf="errormsg!=''" class="alert alert-danger" style="text-align: center">{{errormsg}}
+    <span class="close-button" (click)="closeError()">X</span>
+</div>
+</div>
+<div class="container-fluid">
+    <div *ngIf="errormsg!=null">
+   
+    </div>
+    <div class="login-content">
+        <form [formGroup]="userform" (ngSubmit)="Login()">
+            
+            <div>
+                <label for="userName">Enter User Name: </label>
+                <input id="userName" type="text" size="40px" placeholder="Enter User Name" autocomplete="off" formControlName="userName" />
+    
+                
+          </div>
+          <br>
+        <div>
+            <label for="password">Enter Password: </label> 
+            <input type="password" id="password" size="38px" placeholder="Enter Password" formControlName="password" required/>
+           
+        </div>
+       
+         <br>
+        <div>
+            <button type="submit"  class="btn btn-primary"> Sign In </button>
+          
+               
+            
+        </div>
+      
+        </form>
+    </div>
+</div>
